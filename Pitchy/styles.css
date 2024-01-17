@@ -1,0 +1,114 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #660066; /* Deep Purple background color */
+    opacity: 0; /* Set initial opacity to 0 */
+    transition: opacity 1s ease-in-out; /* Add transition effect for opacity */
+}
+
+body.loaded {
+    opacity: 1; /* Change opacity to 1 when the page is loaded */
+}
+
+header, section, footer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffe6e6; /* Light Peach background */
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    color: #cc0066; /* Deep Pink text color */
+}
+
+h1 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+#photo-gallery, #messages {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+
+#photo-gallery h2, #messages h2 {
+    color: #ff66b2; /* Pink text color */
+    text-align: center;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 15px;
+    color: #660066; /* Deep Purple text color */
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ffe6e6; /* Light Peach background */
+    border-top: 3px solid #cc0066; /* Deep Pink border */
+    color: #cc0066; /* Deep Pink text color */
+    border-radius: 0 0 15px 15px;
+}
+
+.image-with-message {
+    position: relative;
+    border: 8px solid #ff66b2; /* Pink border color */
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-with-message img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.image-message {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9); /* White background with some transparency */
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(130%); /* Initially hide the message below the image */
+}
+
+.image-with-message:hover,
+.image-with-message:focus {
+    transform: scale(1.1);
+}
+
+.image-with-message:hover .image-message,
+.image-with-message:focus .image-message {
+    transform: translateY(0); /* Move the message up on hover/focus */
+}
